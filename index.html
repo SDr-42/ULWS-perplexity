@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Up Late in Washington State — NA Zoom Group</title>
+  <meta name="description" content="Public information hub for the Up Late in Washington State NA Zoom group, including formats, events, and official literature links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="brand-wrap">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 80 80" role="img" aria-label="Up Late group mark">
+          <rect x="8" y="8" width="64" height="64" rx="14" fill="currentColor" opacity="0.12"></rect>
+          <path d="M18 24H44V32H34V56H26V32H18V24Z" fill="currentColor"></path>
+          <path d="M48 24H56V48C56 51 58 53 61 53C64 53 66 51 66 48V24H74V49C74 58 68 64 61 64C54 64 48 58 48 49V24Z" fill="currentColor"></path>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">NA Zoom Group</p>
+        <h1>Up Late</h1>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#schedule">Schedule</a>
+      <a href="#formats">Formats</a>
+      <a href="#events">Events</a>
+      <a href="#literature">Literature</a>
+      <a href="#members">Members</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Inspired by your group artwork</p>
+        <h2>Late-night recovery, built around a bold regional identity.</h2>
+        <p class="lede">This starter site separates public meeting information from member resources while carrying the neon yellow, evergreen green, cobalt blue, and charcoal palette drawn from your uploaded image.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#schedule">View meeting info</a>
+          <a class="btn btn-secondary" href="#members">Member resources</a>
+        </div>
+      </div>
+
+      <div class="hero-art card-glow">
+        <img src="./assets/hero-bg.jpg" alt="Up Late in Washington State group artwork" width="768" height="768" loading="eager" decoding="async" />
+      </div>
+    </section>
+
+    <section class="section" id="schedule">
+      <div class="section-head">
+        <p class="eyebrow">Public page</p>
+        <h3>Meeting basics</h3>
+      </div>
+      <div class="grid two-up">
+        <article class="card">
+          <h4>Zoom meeting</h4>
+          <ul class="meta-list" role="list">
+            <li><span>When</span><strong>Nightly at 10:30 PM PT</strong></li>
+            <li><span>Platform</span><strong>Zoom</strong></li>
+            <li><span>Audience</span><strong>Open to anyone seeking recovery</strong></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h4>Newcomer note</h4>
+          <p>Keep this area focused on simple access: how to join, what to expect, and who to contact for help entering the room or understanding the meeting flow.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="formats">
+      <div class="section-head">
+        <p class="eyebrow">Rotating calendar</p>
+        <h3>Weekly meeting formats</h3>
+      </div>
+      <div class="formats-grid" id="formats-grid"></div>
+    </section>
+
+    <section class="section" id="events">
+      <div class="section-head">
+        <p class="eyebrow">Community</p>
+        <h3>Events and announcements</h3>
+      </div>
+      <div class="grid two-up" id="events-grid"></div>
+    </section>
+
+    <section class="section" id="literature">
+      <div class="section-head">
+        <p class="eyebrow">Official resources</p>
+        <h3>Literature links</h3>
+      </div>
+      <div class="grid two-up">
+        <article class="card card-link">
+          <h4>NA World Services literature</h4>
+          <p>Link this card to official NA literature resources rather than re-hosting copyrighted NA PDFs in the public site repository.</p>
+          <a href="https://na.org/literature/" target="_blank" rel="noopener noreferrer">Open official literature</a>
+        </article>
+        <article class="card card-link">
+          <h4>Local documents library</h4>
+          <p>Use this area for group-created public documents only, such as event flyers, format summaries, and newcomer handouts you own.</p>
+          <a href="#members">Review access model</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section members-zone" id="members">
+      <div class="section-head">
+        <p class="eyebrow">Protected resources</p>
+        <h3>Members and service files</h3>
+      </div>
+      <div class="grid two-up">
+        <article class="card locked-card">
+          <h4>Trusted servant hub</h4>
+          <p>This starter code includes a members section in the interface, but for real protection it should link to external access-controlled storage for guidelines, scripts, admin documents, and sensitive files.</p>
+          <a class="btn btn-primary" href="./members.html">Open members landing page</a>
+        </article>
+        <article class="card">
+          <h4>Suggested folders</h4>
+          <ul role="list" class="bullet-list">
+            <li>Chairperson scripts</li>
+            <li>Secretary checklists</li>
+            <li>Group guidelines</li>
+            <li>Admin and treasury files</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Initial GitHub-ready codebase for an NA Zoom group public site and member-resource gateway.</p>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
