@@ -1,22 +1,23 @@
 const formats = [
-  { day: 'Sunday', title: 'Speaker / Share', note: 'Rotate in your actual format and chairperson script reference.' },
-  { day: 'Monday', title: 'Living Clean', note: 'Use this slot for book study, topic, or traditions.' },
-  { day: 'Tuesday', title: 'Just for Today', note: 'Ideal for your rotating format calendar feed.' },
-  { day: 'Wednesday', title: 'Topic Discussion', note: 'Good place for service announcements and host notes.' },
-  { day: 'Thursday', title: 'Step Study', note: 'Link to format sheet or external members folder.' },
-  { day: 'Friday', title: 'Open Participation', note: 'Keep public-facing language simple and welcoming.' }
+  { day: 'Monday', title: 'Basic Text', note: 'Regular weekly format.' },
+  { day: 'Tuesday', title: 'Spin the Wheel', note: 'Business meetings are held the first Tuesday of every month starting July 7.' },
+  { day: 'Wednesday', title: 'Speaker Meeting', note: 'Use this day for speaker-led sharing.' },
+  { day: 'Thursday', title: 'Step Study', note: 'Ideal place to link the weekly script or reading structure.' },
+  { day: 'Friday', title: 'Living Clean', note: 'Meeting time is 10:00 PM PDT to 11:30 PM PDT.' },
+  { day: 'Saturday', title: 'Bring Your Own Literature', note: 'Meeting time is 10:00 PM PDT to 11:30 PM PDT.' },
+  { day: 'Sunday', title: 'IP (I.P.A.P.I)', note: 'Meeting time is 9:00 PM PDT to 10:30 PM PDT.' }
 ];
 
 const events = [
   {
-    title: 'Area event placeholder',
-    date: 'June 14',
-    body: 'Replace this with your next speaker jam, workshop, or service event.'
+    title: 'Monthly business meeting',
+    date: 'First Tuesday monthly',
+    body: 'Business meetings are held the first Tuesday of every month, starting July 7.'
   },
   {
-    title: 'Business meeting reminder',
-    date: 'Last Sunday monthly',
-    body: 'Use this panel for internal reminders that are still safe to show publicly.'
+    title: 'Weekly virtual meeting schedule',
+    date: 'Ongoing',
+    body: 'Sunday through Thursday runs from 9:00 PM to 10:30 PM PDT, and Friday through Saturday runs from 10:00 PM to 11:30 PM PDT.'
   }
 ];
 

@@ -1,4 +1,4 @@
-# Up Late NA Site Starter
+# Up Late In Washington State Site Starter
 
 Initial static site scaffold for GitHub Pages.
 
@@ -6,8 +6,16 @@ Initial static site scaffold for GitHub Pages.
 - `index.html` public landing page
 - `members.html` gateway page for protected resources
 - `styles.css` custom styling based on the uploaded artwork palette
-- `app.js` starter rotating formats and events data
+- `app.js` live rotating formats and events data
 - `assets/hero-bg.jpg` uploaded source image
+
+## Current public info loaded
+- Group name: Up Late In Washington State
+- Location: Virtual, WA
+- Sunday–Thursday: 9:00 PM PDT – 10:30 PM PDT
+- Friday–Saturday: 10:00 PM PDT – 11:30 PM PDT
+- Zoom room: https://us02web.zoom.us/j/7937507408
+- Monthly business meeting: first Tuesday of every month starting July 7
 
 ## GitHub Pages
 1. Create a new repository.
