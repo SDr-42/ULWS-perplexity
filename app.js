@@ -1,6 +1,6 @@
 const formats = [
   { day: 'Monday', title: 'Basic Text', note: 'Regular weekly format.' },
-  { day: 'Tuesday', title: 'Spin the Wheel', note: 'Business meetings are held the first Tuesday of every month starting July 7.' },
+  { day: 'Tuesday', title: 'Spin the Wheel', note: 'Business meetings are held the first Tuesday of every month at 7pm' },
   { day: 'Wednesday', title: 'Speaker Meeting', note: 'Use this day for speaker-led sharing.' },
   { day: 'Thursday', title: 'Step Study', note: 'Ideal place to link the weekly script or reading structure.' },
   { day: 'Friday', title: 'Living Clean', note: 'Meeting time is 10:00 PM PDT to 11:30 PM PDT.' },
@@ -12,12 +12,12 @@ const events = [
   {
     title: 'Monthly business meeting',
     date: 'First Tuesday monthly',
-    body: 'Business meetings are held the first Tuesday of every month, starting July 7.'
+    body: 'Business meetings are held the first Tuesday of every month at 7pm.'
   },
   {
     title: 'Weekly virtual meeting schedule',
     date: 'Ongoing',
-    body: 'Sunday through Thursday runs from 9:00 PM to 10:30 PM PDT, and Friday through Saturday runs from 10:00 PM to 11:30 PM PDT.'
+    body: 'Sunday through Thursday runs from 9:00 PM to 10:30 PM PDT, and Friday and Saturday runs from 10:00 PM to 11:30 PM PDT.'
   }
 ];
 
