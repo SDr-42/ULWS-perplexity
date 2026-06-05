@@ -28,7 +28,13 @@
       <a href="#members">Members</a>
     </nav>
   </header>
+<audio id="bg-music" loop>
+  <source src="just-for-today.mp3" type="audio/mpeg">
+</audio>
 
+<button id="music-toggle" style="display: none; padding: 10px; cursor: pointer;">
+  Pause Music
+</button>
   <main id="main">
     <section class="hero">
       <div class="hero-copy">
@@ -127,7 +133,35 @@
   <footer class="site-footer">
     <p>Up Late In Washington State — initial GitHub-ready site build with live meeting details.</p>
   </footer>
+<script>
+  const bgMusic = document.getElementById('bg-music');
+  const musicToggle = document.getElementById('music-toggle');
+  let hasPlayed = false;
 
+  // Attempt to play on the first click anywhere on the page
+  document.body.addEventListener('click', function() {
+    if (!hasPlayed) {
+      bgMusic.play().then(() => {
+        hasPlayed = true;
+        musicToggle.style.display = 'block'; // Show the pause button once playing
+      }).catch((error) => {
+        console.log("Autoplay blocked or failed.", error);
+      });
+    }
+  });
+
+  // Allow the user to pause/resume using the button
+  musicToggle.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent this click from triggering the body event again
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicToggle.textContent = 'Pause Music';
+    } else {
+      bgMusic.pause();
+      musicToggle.textContent = 'Play Music';
+    }
+  });
+</script>
   <script src="./app.js" defer></script>
 </body>
 </html>
