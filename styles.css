@@ -327,3 +327,66 @@ h4 { font-size: var(--text-lg); }
     scroll-behavior: auto !important;
   }
 }
+/* 1. Update all headings to the new, cleaner Serif font */
+h1, h2, h3, h4, .main-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+/* 2. Center the hero section to match the image */
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* 3. Style the specific two-tone main header */
+.main-title {
+  font-size: 4rem; /* Adjust this size as needed for mobile/desktop */
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.gold-italic {
+  font-style: italic;
+  color: #FBBF24; /* The gold/yellow color from the image */
+  font-weight: 600;
+}
+
+/* 4. Style the pill-shaped badge above the header */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #94A3B8; /* A subtle grey to keep focus on the title */
+}
+
+/* 5. Clean up the lede text spacing */
+.lede {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/* Center the buttons below the text */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
