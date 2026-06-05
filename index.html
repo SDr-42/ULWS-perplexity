@@ -26,12 +26,12 @@
       <a href="#events">Events</a>
       <a href="#literature">Literature</a>
       <a href="#members">Members</a>
-      <audio id="bg-music" loop>
+     <audio id="bg-music" loop>
   <source src="assets/just-for-today.mp3" type="audio/mpeg">
 </audio>
 
-<button id="music-toggle" style="display: none; padding: 10px; cursor: pointer;">
-  Pause Music
+<button id="music-toggle" style="padding: 10px; cursor: pointer; border-radius: 5px; border: 1px solid white; background: transparent; color: white; margin-left: 15px;">
+  Play Music
 </button>
     </nav>
   </header>
@@ -140,23 +140,27 @@
   let hasPlayed = false;
 
   // Attempt to play on the first click anywhere on the page
-  document.body.addEventListener('click', function() {
-    if (!hasPlayed) {
+  document.body.addEventListener('click', function(e) {
+    // Don't trigger this if they clicked the button directly
+    if (!hasPlayed && e.target !== musicToggle) {
       bgMusic.play().then(() => {
         hasPlayed = true;
-        musicToggle.style.display = 'block'; // Show the pause button once playing
+        musicToggle.textContent = 'Pause Music'; // Update text once playing
       }).catch((error) => {
-        console.log("Autoplay blocked or failed.", error);
+        console.log("Autoplay blocked or file not found.", error);
       });
     }
   });
 
-  // Allow the user to pause/resume using the button
+  // Allow the user to manually play/pause using the button
   musicToggle.addEventListener('click', function(e) {
-    e.stopPropagation(); // Prevent this click from triggering the body event again
+    e.stopPropagation(); // Prevent this click from triggering the body event
+    
     if (bgMusic.paused) {
-      bgMusic.play();
-      musicToggle.textContent = 'Pause Music';
+      bgMusic.play().then(() => {
+        hasPlayed = true;
+        musicToggle.textContent = 'Pause Music';
+      }).catch(err => console.log("Error playing audio:", err));
     } else {
       bgMusic.pause();
       musicToggle.textContent = 'Play Music';
