@@ -1,225 +1,384 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Up Late In Washington State — NA Zoom Group</title>
-  <meta name="description" content="Public information hub for the Up Late In Washington State NA Zoom group, including meeting times, rotating formats, and official literature links." />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="./styles.css" />
-
-  <style>
-    /* Global Typography Updates */
-    h1, h2, h3, h4, .serif-heading {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      color: #ffffff;
-    }
-
-    /* Top Navigation Header Layout */
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    .header-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-    .header-icon {
-      font-size: 1.5rem;
-      color: #FBBF24;
-    }
-    .header-title-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-    .header-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: white;
-      line-height: 1.1;
-    }
-    .header-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      color: #94A3B8;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Up Late In Washington State | Virtual NA Group</title>
     
-    /* Navigation Links Styling */
-    .main-nav {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .main-nav a {
-      color: #CBD5E1;
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-    .main-nav a:hover {
-      color: #ffffff;
-    }
-
-    /* Centered Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 5rem 1rem 3rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 9999px;
-      padding: 0.5rem 1.25rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      color: #94A3B8;
-    }
-    .main-title {
-      font-size: 4rem;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-    .gold-italic {
-      font-style: italic;
-      color: #FBBF24;
-      font-weight: 600;
-    }
-    .lede {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.125rem;
-      line-height: 1.6;
-      color: #CBD5E1;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Split Action & Schedule Area */
-    .split-actions {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1rem 4rem;
-    }
-    .join-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 2.5rem 2rem;
-      border-radius: 12px;
-      height: 100%;
-    }
-    .join-card p {
-      color: #94A3B8;
-      margin-bottom: 1.5rem;
-      font-family: 'Inter', sans-serif;
-    }
-    .btn-large {
-      display: inline-block;
-      font-size: 1.125rem;
-      padding: 1rem 2.5rem;
-      background: #EAB308;
-      color: #000000;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-large:hover {
-      background: #FDE047;
-      transform: translateY(-2px);
-    }
-  </style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN for easy mobile GitHub deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            primary: '#10b981', // calming green
+                            gold: '#fbbf24',    // gold for accents
+                            blue: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for extra polish */
+        body {
+            background-color: #0f172a; /* brand-dark */
+            color: #f8fafc; /* brand-light */
+        }
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid rgba(251, 191, 36, 0.5); /* gold */
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #fbbf24;
+            margin-bottom: 1.5rem;
+        }
+        .gold-italic {
+            color: #fbbf24;
+            font-style: italic;
+        }
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<body class="antialiased min-h-screen flex flex-col font-sans">
 
-  <header class="site-header">
-    <a href="#" class="header-brand">
-      <span class="header-icon" aria-hidden="true">🌙</span>
-      <div class="header-title-wrap">
-        <span class="header-title">Up Late</span>
-        <span class="header-subtitle">in Washington State</span>
-      </div>
-    </a>
-
-    <nav class="main-nav" aria-label="Primary">
-      <a href="#">Home</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#formats">Formats</a>
-      <a href="#literature">Literature</a>
-      <a href="#members">Members</a>
-      <a href="#verification">Verification</a>
-      <a href="#report">Report a Concern</a>
-      <a href="#contribute">Contribute</a>
-      
-      <audio id="bg-music" loop>
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
         <source src="assets/just-for-today.mp3" type="audio/mpeg">
-      </audio>
+        Your browser does not support the audio element.
+    </audio>
 
-      <button id="music-toggle" style="padding: 8px 16px; cursor: pointer; border-radius: 6px; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: white; font-family: 'Inter', sans-serif; font-size: 0.875rem; margin-left: 10px; transition: 0.2s;">
-        Play Music
-      </button>
-    </nav>
-  </header>
+    <!-- Navigation -->
+    <header class="w-full border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Top Left: Logo/Name -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <!-- Moon Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary group-hover:text-brand-gold transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                        <span class="font-serif font-semibold text-xl tracking-wide text-white">
+                            ULWS <span class="hidden sm:inline">| NA Group</span>
+                        </span>
+                    </a>
+                </div>
 
-  <main id="main">
-    
-    <section class="hero">
-      <div class="hero-badge">
-        <span aria-hidden="true">🌙</span> A VIRTUAL NA GROUP • PACIFIC TIME
-      </div>
-      
-      <h1 class="main-title">
-        Up Late<br>
-        <span class="gold-italic">in Washington State</span>
-      </h1>
-      
-      <p class="lede">When the world goes quiet, we gather. A late-night Narcotics Anonymous meeting, every night of the week — for anyone who needs a room to walk into when the lights are out.</p>
-    </section>
+                <!-- Top Right: Links -->
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="#verification" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Verification</a>
+                    <a href="#report" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Report a Concern</a>
+                    <a href="#contribute" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contribute</a>
+                    
+                    <!-- Music Toggle Button -->
+                    <button id="music-toggle" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all border border-slate-700">
+                        <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span id="music-text">Play Music</span>
+                    </button>
+                </nav>
 
-    <section class="split-actions" id="schedule">
-      <div class="grid two-up" style="align-items: stretch; gap: 2rem;">
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="music-toggle-mobile" class="p-2 rounded-full bg-slate-800 text-brand-primary border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#verification" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Verification</a>
+                <a href="#report" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Report a Concern</a>
+                <a href="#contribute" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Contribute</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Centered Hero Section -->
+        <section class="max-w-4xl mx-auto px-4 py-20 sm:py-32 text-center">
+            <div class="hero-badge">Virtual NA Group</div>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Up Late In <br />
+                <span class="gold-italic">Washington State</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Late-night recovery with a steady weekly rhythm. Welcome to our virtual NA home group, a safe and judgment-free space to find a new way to live. You don't have to do this alone anymore—join us 7 days a week on Zoom and we'll save you a virtual seat.
+            </p>
+        </section>
+
+        <!-- Split Action Section (Join vs Schedule) -->
+        <section class="max-w-6xl mx-auto px-4 pb-24">
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- Left: Join Card -->
+                <div class="bg-gradient-to-br from-brand-primary/20 to-brand-blue/20 p-8 rounded-3xl border border-brand-primary/30 flex flex-col justify-center text-center shadow-[0_0_40px_rgba(16,185,129,0.1)]">
+                    <h2 class="font-serif text-3xl font-bold text-white mb-4">Ready to find a new way to live?</h2>
+                    <p class="text-slate-300 mb-8">Click below to enter our secure Zoom meeting room. We are here and waiting.</p>
+                    <a href="https://us02web.zoom.us/j/7937507408" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-brand-primary hover:bg-emerald-400 text-slate-900 font-bold text-lg py-4 px-8 rounded-full transition-transform hover:scale-105 active:scale-95 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        Join Tonight's Meeting
+                    </a>
+                </div>
+
+                <!-- Right: Schedule Card -->
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 flex flex-col justify-center">
+                    <div class="flex items-center gap-3 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h2 class="font-serif text-3xl font-bold text-white">Meeting Basics</h2>
+                    </div>
+                    
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Weekly Schedule</h3>
+                    <ul class="space-y-4 mb-6">
+                        <li class="flex justify-between items-center text-lg">
+                            <span class="text-slate-300">Sunday &ndash; Thursday</span>
+                            <span class="font-medium text-brand-primary">9:00 PM <span class="text-sm">PDT</span></span>
+                        </li>
+                        <li class="flex justify-between items-center text-lg">
+                            <span class="text-slate-300">Friday &ndash; Saturday</span>
+                            <span class="font-medium text-brand-primary">10:00 PM <span class="text-sm">PDT</span></span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-slate-500 italic">*Meetings last 90 minutes. Arrive a few minutes early to settle in.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Grids Section -->
+        <section class="max-w-6xl mx-auto px-4 pb-24 space-y-16">
+            
+            <!-- Weekly Formats -->
+            <div id="formats-section">
+                <h2 class="font-serif text-3xl font-bold text-white mb-8 border-b border-slate-800 pb-4">Weekly Meeting Formats</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="formats-grid">
+                    <!-- Cards -->
+                    <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-600 transition-colors">
+                        <h4 class="font-bold text-brand-gold mb-2">Monday</h4>
+                        <p class="text-slate-300 text-sm">Step Working Guide</p>
+                    </div>
+                    <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-600 transition-colors">
+                        <h4 class="font-bold text-brand-gold mb-2">Wednesday</h4>
+                        <p class="text-slate-300 text-sm">Literature Study</p>
+                    </div>
+                    <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-600 transition-colors">
+                        <h4 class="font-bold text-brand-gold mb-2">Friday</h4>
+                        <p class="text-slate-300 text-sm">Speaker Meeting</p>
+                    </div>
+                    <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-600 transition-colors">
+                        <h4 class="font-bold text-brand-gold mb-2">Sunday</h4>
+                        <p class="text-slate-300 text-sm">Open Share / Newcomer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events & Service Notes -->
+            <div id="events-section">
+                <h2 class="font-serif text-3xl font-bold text-white mb-8 border-b border-slate-800 pb-4">Events and Service Notes</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="events-grid">
+                     <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50">
+                        <p class="text-slate-400 text-sm mb-2">Upcoming</p>
+                        <h4 class="font-bold text-white mb-2">Group Conscience</h4>
+                        <p class="text-slate-300 text-sm">Last Sunday of the month following the regular meeting.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Resources Section -->
+        <section class="border-t border-slate-800 bg-slate-900/50 py-24">
+            <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+                
+                <!-- Official Resources -->
+                <div>
+                    <h2 class="font-serif text-3xl font-bold text-white mb-6">Official Resources</h2>
+                    <p class="text-slate-400 mb-8 text-sm">Use this public section to point members and newcomers to official literature resources and public group documents.</p>
+                    
+                    <div class="space-y-4">
+                        <a href="https://na.org/recovery-literature" target="_blank" class="block bg-slate-800 hover:bg-slate-700 p-4 rounded-xl border border-slate-700 transition-colors">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold text-white">NA World Services Literature</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Open official literature</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </div>
+                        </a>
+                         <a href="#" class="block bg-slate-800 hover:bg-slate-700 p-4 rounded-xl border border-slate-700 transition-colors">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-bold text-white">Public Group Documents</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Flyers and newcomer downloads</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Protected Resources -->
+                <div>
+                    <h2 class="font-serif text-3xl font-bold text-white mb-6">Members & Service</h2>
+                    <p class="text-slate-400 mb-8 text-sm">Trusted servant hub. Public gateway to externally protected folders for scripts, guidelines, admin documents, and internal archives.</p>
+                    
+                    <a href="#" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition-colors mb-8 w-full md:w-auto justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                        </svg>
+                        Open Members Landing Page
+                    </a>
+
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Suggested Folders</h4>
+                        <ul class="grid grid-cols-2 gap-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg> Chairperson scripts</li>
+                            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg> Secretary checklists</li>
+                            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg> Group guidelines</li>
+                            <li class="flex items-center gap-2"><svg class="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg> Admin and treasury</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 py-8 text-center border-t border-slate-800">
+        <p class="text-slate-500 text-sm">&copy; <span id="year"></span> Up Late In Washington State NA Group.</p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        <article class="join-card">
-          <h3 style="margin-bottom: 0.5rem;">Join Tonight's Meeting</h3>
-          <p>The virtual room opens 15 minutes before the meeting starts.</p>
-          <a class="btn-large" href="https://us02web.zoom.us/j/7937507408" target="_blank" rel="noopener noreferrer">
-            Join on Zoom
-          </a>
-        </article>
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        <article class="card">
-          <h4 style="font-size: 1.5rem; margin-bottom: 1.25rem;">Weekly schedule</h4>
-          <ul class="meta-list" role="list" style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem;">
-              <span style="display: block; color: #94A3B8; font-
+        // Background Audio Logic
+        const audio = document.getElementById('bg-music');
+        const toggleBtn = document.getElementById('music-toggle');
+        const toggleBtnMobile = document.getElementById('music-toggle-mobile');
+        const musicText = document.getElementById('music-text');
+        const musicIcon = document.getElementById('music-icon');
+        let isPlaying = false;
+        let hasInteracted = false;
+
+        // Play icon SVG
+        const playIcon = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`;
+        
+        // Pause icon SVG
+        const pauseIcon = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />`;
+
+        function updateMusicUI(playing) {
+            isPlaying = playing;
+            musicText.textContent = playing ? "Pause Music" : "Play Music";
+            musicIcon.innerHTML = playing ? pauseIcon : playIcon;
+            
+            // Mobile button sync
+            toggleBtnMobile.innerHTML = playing ? 
+                `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">${pauseIcon}</svg>` : 
+                `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">${playIcon}</svg>`;
+            
+            if (playing) {
+                toggleBtn.classList.add('border-brand-primary', 'text-brand-primary');
+                toggleBtnMobile.classList.add('border-brand-primary', 'text-brand-primary');
+            } else {
+                toggleBtn.classList.remove('border-brand-primary', 'text-brand-primary');
+                toggleBtnMobile.classList.remove('border-brand-primary', 'text-brand-primary');
+            }
+        }
+
+        function toggleAudio(e) {
+            if (e) {
+                e.stopPropagation(); // Prevent document click from overriding this
+            }
+            hasInteracted = true;
+            
+            if (audio.paused) {
+                audio.play().then(() => {
+                    updateMusicUI(true);
+                }).catch(err => {
+                    console.log("Audio play failed:", err);
+                    updateMusicUI(false);
+                });
+            } else {
+                audio.pause();
+                updateMusicUI(false);
+            }
+        }
+
+        toggleBtn.addEventListener('click', toggleAudio);
+        toggleBtnMobile.addEventListener('click', toggleAudio);
+
+        // Auto-play on first interaction anywhere on the document
+        document.addEventListener('click', function(e) {
+            // Don't trigger if they clicked the play button directly (handled above)
+            if (!hasInteracted && e.target.closest('#music-toggle') === null && e.target.closest('#music-toggle-mobile') === null) {
+                hasInteracted = true;
+                audio.play().then(() => {
+                    updateMusicUI(true);
+                }).catch(err => {
+                    console.log("Auto-play blocked by browser:", err);
+                });
+            }
+        }, { once: true }); // Only listen for the very first click
+
+    </script>
+</body>
+</html>
