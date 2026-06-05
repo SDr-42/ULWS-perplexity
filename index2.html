@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Up Late In Washington State — NA Zoom Group</title>
+  <meta name="description" content="Public information hub for the Up Late In Washington State NA Zoom group, including meeting times, rotating formats, events, and official literature links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="brand-wrap">
+      <div>
+        <h1>Up Late In Washington State</h1>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#schedule">Schedule</a>
+      <a href="#formats">Formats</a>
+      <a href="#events">Events</a>
+      <a href="#literature">Literature</a>
+      <a href="#members">Members</a>
+     <audio id="bg-music" loop>
+  <source src="assets/just-for-today.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-toggle" style="padding: 10px; cursor: pointer; border-radius: 5px; border: 1px solid white; background: transparent; color: white; margin-left: 15px;">
+  Play Music
+</button>
+    </nav>
+  </header>
+
+  <main id="main">
+  <section class="hero">
+  <div class="hero-copy">
+    <div class="hero-badge">
+      <span aria-hidden="true">🌙</span> A VIRTUAL NA GROUP • PACIFIC TIME
+    </div>
+    
+    <h1 class="main-title">
+      Up Late<br>
+      <span class="gold-italic">in Washington State</span>
+    </h1>
+    
+    <p class="lede">When the world goes quiet, we gather. A late-night Narcotics Anonymous meeting, every night of the week — for anyone who needs a room to walk into when the lights are out.</p>
+    
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://us02web.zoom.us/j/7937507408" target="_blank" rel="noopener noreferrer">Join on Zoom</a>
+      <a class="btn btn-secondary" href="#formats">See weekly formats</a>
+    </div>
+  </div>
+</section>
+      <div class="section-head">
+        <p class="eyebrow">Public page</p>
+        <h3>Meeting basics</h3>
+      </div>
+      <div class="grid two-up">
+        <article class="card">
+          <h4>Weekly schedule</h4>
+          <ul class="meta-list" role="list">
+            <li><span>Sunday – Thursday</span><strong>9:00 PM PDT – 10:30 PM PDT</strong></li>
+            <li><span>Friday – Saturday</span><strong>10:00 PM PDT – 11:30 PM PDT</strong></li>
+          </ul>
+        </article>
+        <article class="card card-link">
+          <h4>Zoom meeting room</h4>
+          <p>Use the direct Zoom room link below for the meeting entrance page.</p>
+          <a href="https://us02web.zoom.us/j/7937507408" target="_blank" rel="noopener noreferrer">https://us02web.zoom.us/j/7937507408</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="formats">
+      <div class="section-head">
+        <p class="eyebrow">Rotating calendar</p>
+        <h3>Weekly meeting formats</h3>
+      </div>
+      <div class="formats-grid" id="formats-grid"></div>
+    </section>
+
+    <section class="section" id="events">
+      <div class="section-head">
+        <p class="eyebrow">Community</p>
+        <h3>Events and service notes</h3>
+      </div>
+      <div class="grid two-up" id="events-grid"></div>
+    </section>
+
+    <section class="section" id="literature">
+      <div class="section-head">
+        <p class="eyebrow">Official resources</p>
+        <h3>Literature links</h3>
+      </div>
+      <div class="grid two-up">
+        <article class="card card-link">
+          <h4>NA World Services literature</h4>
+          <p>Use this public section to point members and newcomers to official literature resources.</p>
+          <a href="https://na.org/literature/" target="_blank" rel="noopener noreferrer">Open official literature</a>
+        </article>
+        <article class="card">
+          <h4>Public group documents</h4>
+          <p>You can later add your own public flyers, format overviews, and newcomer-friendly downloads here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section members-zone" id="members">
+      <div class="section-head">
+        <p class="eyebrow">Protected resources</p>
+        <h3>Members and service files</h3>
+      </div>
+      <div class="grid two-up">
+        <article class="card locked-card">
+          <h4>Trusted servant hub</h4>
+          <p>Use this area as the public gateway to externally protected folders for scripts, guidelines, admin documents, and internal archives.</p>
+          <a class="btn btn-primary" href="./members.html">Open members landing page</a>
+        </article>
+        <article class="card">
+          <h4>Suggested folders</h4>
+          <ul role="list" class="bullet-list">
+            <li>Chairperson scripts</li>
+            <li>Secretary checklists</li>
+            <li>Group guidelines</li>
+            <li>Admin and treasury files</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Up Late In Washington State — initial GitHub-ready site build with live meeting details.</p>
+  </footer>
+<script>
+  const bgMusic = document.getElementById('bg-music');
+  const musicToggle = document.getElementById('music-toggle');
+  let hasPlayed = false;
+
+  // Attempt to play on the first click anywhere on the page
+  document.body.addEventListener('click', function(e) {
+    // Don't trigger this if they clicked the button directly
+    if (!hasPlayed && e.target !== musicToggle) {
+      bgMusic.play().then(() => {
+        hasPlayed = true;
+        musicToggle.textContent = 'Pause Music'; // Update text once playing
+      }).catch((error) => {
+        console.log("Autoplay blocked or file not found.", error);
+      });
+    }
+  });
+
+  // Allow the user to manually play/pause using the button
+  musicToggle.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent this click from triggering the body event
+    
+    if (bgMusic.paused) {
+      bgMusic.play().then(() => {
+        hasPlayed = true;
+        musicToggle.textContent = 'Pause Music';
+      }).catch(err => console.log("Error playing audio:", err));
+    } else {
+      bgMusic.pause();
+      musicToggle.textContent = 'Play Music';
+    }
+  });
+</script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
